@@ -51,8 +51,17 @@ src/
     └── icons.jsx             # inline SVG icons
 ```
 
-## Replacing placeholder imagery
+## Product imagery
 
-Product photos are elegant gradient placeholders (`.placeholder-art` / `.placeholder-art-deep`)
-because the Figma design uses empty rectangles. Swap any placeholder `<div className="placeholder-art">`
-for an `<img>`/`<picture>` — aspect ratios match the Figma frames (e.g. gallery main image 656×600).
+Product photos are exported directly from the Figma image fills
+(`src/assets/products/`), rendered through the Figma API at 2× for crisp
+retina display.
+
+| File                  | Used in                                |
+| --------------------- | -------------------------------------- |
+| `santal-main.png`     | Gallery main image                     |
+| `thumb-0..2.png`      | Gallery thumbnails / enlarged views    |
+| `fleur-de-lune.png`   | Related products card                  |
+| `noir-cocoon.png`     | Related products card                  |
+| `sol-dor.png`         | Related products card                  |
+| `rose-absolute.png`   | Related products card                  |

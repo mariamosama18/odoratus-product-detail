@@ -1,27 +1,32 @@
+import fleurDeLune from "../assets/products/fleur-de-lune.png";
+import noirCocoon from "../assets/products/noir-cocoon.png";
+import solDOr from "../assets/products/sol-dor.png";
+import roseAbsolute from "../assets/products/rose-absolute.png";
+
 const PRODUCTS = [
   {
     name: "Fleur de Lune",
     family: "Floral / Jasmine & White Musk",
     price: 195,
-    art: "placeholder-art",
+    image: fleurDeLune,
   },
   {
     name: "Noir Cocoon",
     family: "Oriental / Tobacco & Amber",
     price: 240,
-    art: "placeholder-art-deep",
+    image: noirCocoon,
   },
   {
     name: "Sol d'Or",
     family: "Fresh / Bergamot & Sea Salt",
     price: 185,
-    art: "placeholder-art",
+    image: solDOr,
   },
   {
     name: "Rose Absolute",
     family: "Floral / Damask Rose & Cedar",
     price: 205,
-    art: "placeholder-art-deep",
+    image: roseAbsolute,
   },
 ];
 
@@ -41,11 +46,14 @@ export default function RelatedProducts() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PRODUCTS.map((product) => (
             <article key={product.name} className="bg-white p-4">
-              <div
-                className={`aspect-[270/320] w-full overflow-hidden ${product.art}`}
-                role="img"
-                aria-label={product.name}
-              />
+              <div className="aspect-[270/320] w-full overflow-hidden bg-sandlight">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div className="mt-4 flex items-start justify-between gap-3">
                 <div>
                   <h3 className="font-display text-[22px] leading-tight text-ink">
